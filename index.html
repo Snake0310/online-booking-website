@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+      src="https://kit.fontawesome.com/7771f1e3ef.js"
+      crossorigin="anonymous"
+    ></script>
+  <title>Aurelia Hotel | Relax, Refresh, Reconnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Aurelia Hotel</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-us">About Us</a></li> 
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:info@aureliahotel.com">Email Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="home">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h2>Your Comfort, Our Priority</h2>
+      <p>Book your stay with us and enjoy the luxury of comfort and peace</p>
+      <div class="slider">
+        <div class="slides">
+      <img src="images/hotel1.png" 
+           alt="image 1" >
+      <img src="images/hotel2.jpg" 
+           alt="image 2" >
+      <img src="images/hotel3.jpg" 
+           alt="image 3" >
+          </div>
+          <button class="prev" onclick="prevSlide()">&#10094</button>
+          <button class="next" onclick="nextSlide()">&#10095</button>
+        </div>
+        <br>
+        <br>
+    </section>
+
+    <!-- MULTI-COLUMN LAYOUT -->
+    <section id="about-us" class="info-grid">
+      <article>
+        <h2>About Aurelia Hotel</h2>
+        <p>At <strong>Aurelia Hotel</strong>, we provide world-class services designed for comfort and relaxation.<br> 
+        Our rooms are designed to give you the perfect experience for any occasion.</p>
+        <ul>
+          <li>24/7 Room Service</li>
+          <li>Free Wi-Fi Access</li>
+          <li>Complimentary Breakfast</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Popular Facilities</h3>
+        <ol>
+          <li>Spa and Wellness Center</li>
+          <li>Infinity Pool</li>
+          <li>Fitness Gym</li>
+        </ol>
+      </aside>
+    </section>
+
+    <!-- ROOMS SECTION -->
+    <section id="rooms">
+      <h1 class="room-title">Our Rooms</h1>
+      <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+          <th>Room Type</th>
+          <th>Price/Night</th>
+          <th>Features</th>
+        </tr>
+        <tr>
+          <td>Standard</td>
+          <td>R 1350</td>
+          <td>Queen Bed, Free Breakfast</td>
+        </tr>
+        <tr>
+          <td>Deluxe</td>
+          <td>R 2500</td>
+          <td>King Bed, Sea View</td>
+        </tr>
+        <tr>
+          <td>Suite</td>
+          <td>R 5000</td>
+          <td>Private Balcony, Lounge Access</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+<section id="booking">
+  <h1 class="book-title">Book Your Stay</h1>
+  <form id="bookingForm">
+    <table border="1" cellpadding="8" cellspacing="0" style="width:80%; margin:auto; background-color:white;">
+      <tr>
+        <td><label for="fullname">Full Name:</label></td>
+        <td><input type="text" id="fullname" name="fullname" required placeholder="Enter your full name"></td>
+      </tr>
+
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" id="email" name="email" required placeholder="you@example.com"></td>
+      </tr>
+
+      <tr>
+        <td><label for="checkin">Check-in Date:</label></td>
+        <td><input type="date" id="checkin" name="checkin" required></td>
+      </tr>
+
+      <tr>
+        <td><label for="checkout">Check-out Date:</label></td>
+        <td><input type="date" id="checkout" name="checkout" required></td>
+      </tr>
+
+      <tr>
+        <td><label>Room Type:</label></td>
+        <td>
+          <select id="roomType" name="roomType" required>
+            <option value="">-- Select a room --</option>
+            <option value="Standard">Standard</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Suite">Suite</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Guests:</label></td>
+        <td><input type="number" id="guests" name="guests" min="0" max="6" required></td>
+      </tr>
+
+      <tr>
+        <td><label>Bed Preference:</label></td>
+        <td>
+          <input type="radio" id="single" name="bed" value="Single" required>
+          <label for="single">Single</label>
+          <input type="radio" id="double" name="bed" value="Double">
+          <label for="double">Double</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Extra Services:</label></td>
+        <td>
+          <input type="checkbox" id="breakfast" name="services" value="Breakfast">
+          <label for="breakfast">Breakfast</label>
+          <input type="checkbox" id="wifi" name="services" value="WiFi">
+          <label for="wifi">WiFi</label>
+          <input type="checkbox" id="spa" name="services" value="Spa Access">
+          <label for="spa">Spa Access</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="rating">Rate our site:</label></td>
+        <td>
+          <input type="range" id="rating" name="rating" min="0" max="10" value="5" oninput="ratingOutput.value = rating.value">
+          <output id="ratingOutput">5</output>/10
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="country">Country:</label></td>
+        <td>
+          <input list="countries" id="country" name="country" required placeholder="Select your country">
+          <datalist id="countries">
+            <option value="United States">
+            <option value="Canada">
+            <option value="United Kingdom">
+            <option value="Australia">
+          </datalist>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <progress id="progressBar" value="0" max="100" style="width:80%;"></progress>
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <audio id="audio" src="audio/buttonSound.mp3" autostart="false"></audio>
+          <button type="submit" onclick="clickSound();">Submit Booking</button>
+          <button type="reset">Reset Form</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <div id="formMessage" style="text-align:center; margin-top:20px; font-weight:bold;"></div>
+</section>
+
+    <!-- EXTRA CONTENT -->
+    <section id="highlights">
+      <h1>Hotel Highlights</h1>
+      <dl>
+        <dt>Location 🏖️</dt>
+        <dd>Beachfront with ocean views</dd>
+        <dt>Dining 🍽️</dt>
+        <dd>Five-star restaurant and cocktail bar</dd>
+        <dt>Service 🔔</dt>
+        <dd>Friendly staff available 24/7</dd>
+      </dl>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:info@aureliahotel.com">info@aureliahotel.com</a></p>
+    <p>Phone: 083 982 2067</p>
+    <div class="footer-social">
+        <a href="#" 
+          ><i class="fa-brands fa-youtube fa-2x"></i></a
+        ><a href="#" 
+          ><i class="fa-brands fa-x-twitter fa-2x"></i></a
+        ><a href="#" 
+          ><i class="fa-brands fa-instagram fa-2x"></i></a
+        ><a href="#" >
+          <i class="fa-brands fa-facebook fa-2x"></i
+        ></a>
+      </div>
+    <p>&copy; 2025 Aurelia Hotel. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

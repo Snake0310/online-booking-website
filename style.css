@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+/* Header */
+header {
+  background-color: #5c7cfa;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 10px;
+}
+
+nav li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #eef1ff;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 500px; 
+}
+
+.slides {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider img {
+    height: 100%;  
+    width: auto;   
+    max-width: 50%;
+    display: none;
+    margin: auto;
+    border-radius: 20px;
+    object-fit: cover; 
+}
+
+img.displaySlide{
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.slider button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+}
+
+/* Multi-column layout */
+.info-grid {
+  display: grid;
+  font-size: 30px;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+  padding: 100px;
+  background-color: #fafbff;
+}
+
+/* Rooms table */
+.room-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#rooms {
+  padding: 90px 20px;
+}
+
+#rooms table {
+  width: 80%;
+  margin: 40px auto;
+  font-size: 1.25em;
+  background-color: white;
+  border-collapse: collapse;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#rooms th {
+  background-color: #5c7cfa;
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+}
+
+#rooms td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease;
+}
+
+#rooms tr:hover td {
+  background-color: #f8f9ff;
+}
+
+#rooms tr:last-child td {
+  border-bottom: none;
+}
+
+/* Booking */
+.book-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#booking {
+  margin-bottom: 80px;
+}
+
+#bookingForm table {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#bookingForm th, #bookingForm td {
+  padding: 15px;
+  text-align: left;
+}
+
+#bookingForm th {
+  background-color: #5c7cfa;
+  color: white;
+  font-weight: 600;
+}
+
+#bookingForm tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#bookingForm tr:hover {
+  background-color: #f1f1f1;
+}
+
+#bookingForm button {
+  background-color: #5c7cfa; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  margin: 10px;
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+#bookingForm button:hover {
+  background-color: #4a6bcf; 
+}
+
+/* Highlights section */
+#highlights {
+  padding: 30px;
+  background-color: #eef3ff;
+  text-align: center;
+}
+
+#highlights h1 {
+  margin-bottom: 25px;
+}
+
+#highlights dt {
+  font-size: 1.5em;
+}
+
+#highlights dd {
+  font-size: 1.15em;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #f3f3f3;
+  text-decoration: underline;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.fa-youtube,.fa-x-twitter,.fa-instagram,.fa-facebook
+ {
+  color: rgb(255, 255, 255);
+  margin-right: 15px;
+  margin-left: 40px;
+  transition: color 0.15s ease-out 0.15s;
+}
